@@ -3,10 +3,9 @@ declare(strict_types=1);
 
 namespace Runtuer\Domain\Logic;
 
-
-use Runtuer\Domain\Vo\BackgroundVo;
 use Intervention\Image\AbstractFont as Font;
 use Intervention\Image\Image;
+use Runtuer\Domain\Vo\BackgroundVo;
 
 abstract class BaseImage
 {
@@ -32,7 +31,7 @@ abstract class BaseImage
      * @param $point
      * @return WordImage
      */
-    public function setPoint($point):self
+    public function setPoint($point): self
     {
         $this->point = $point;
         return $this;
@@ -41,7 +40,7 @@ abstract class BaseImage
 
     protected function makeWatermark(Image $image)
     {
-        if (! empty($this->watermark)) {
+        if (!empty($this->watermark)) {
             $info = imagettfbbox($this->watermark['fontsize'], 0, $this->fontFile, $this->watermark['text']);
             $minX = min($info[0], $info[2], $info[4], $info[6]);
             $minY = min($info[1], $info[3], $info[5], $info[7]);
@@ -50,7 +49,7 @@ abstract class BaseImage
             $y = abs($minY);
             /* 计算文字初始坐标和尺寸 */
             $h = $maxY - $minY;
-            $x += $image->getWidth() - $this->watermark['fontsize']/2; //留出半个单位字体像素的余白，不至于水印紧贴着右边
+            $x += $image->getWidth() - $this->watermark['fontsize'] / 2; //留出半个单位字体像素的余白，不至于水印紧贴着右边
             $y += $image->getHeight() - $h;
             $image->text($this->watermark['text'], $x, $y, function (Font $font) {
                 $font->file($this->fontFile);
@@ -78,7 +77,7 @@ abstract class BaseImage
      * @param BackgroundVo $backgroundVo
      * @return $this
      */
-    public function setBackgroundVo(BackgroundVo $backgroundVo):self
+    public function setBackgroundVo(BackgroundVo $backgroundVo): self
     {
         $this->backgroundVo = $backgroundVo;
         return $this;

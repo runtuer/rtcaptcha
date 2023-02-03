@@ -2,7 +2,9 @@
 declare(strict_types=1);
 
 namespace Runtuer\Domain\Vo;
+
 use Intervention\Image\Image;
+
 class TemplateVo extends ImageVo
 {
     /**
@@ -26,7 +28,6 @@ class TemplateVo extends ImageVo
     {
         $this->offset = $offset;
     }
-
 
 
 }

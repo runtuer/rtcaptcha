@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Runtuer\Domain\Vo;
 
-
 class OffsetVo
 {
     public $x;

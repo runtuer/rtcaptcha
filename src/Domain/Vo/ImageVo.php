@@ -2,9 +2,9 @@
 
 namespace Runtuer\Domain\Vo;
 
-use Runtuer\Utils\MathUtils;
 use Intervention\Image\Image;
 use Intervention\Image\ImageManagerStatic;
+use Runtuer\Utils\MathUtils;
 
 abstract class ImageVo
 {
@@ -61,9 +61,9 @@ abstract class ImageVo
     public function getBlurValue(int $x, int $y): array
     {
         $image = $this->image;
-        $red = [];
+        $red   = [];
         $green = [];
-        $blue = [];
+        $blue  = [];
         $alpha = [];
         foreach ([
                      [0, 1], [0, -1],
@@ -78,9 +78,9 @@ abstract class ImageVo
                 continue;
             }
             [$r, $g, $b, $a] = $this->getPickColor($pointX, $pointY);
-            $red[] = $r;
+            $red[]   = $r;
             $green[] = $g;
-            $blue[] = $b;
+            $blue[]  = $b;
             $alpha[] = $a;
         }
         return [MathUtils::avg($red), MathUtils::avg($green), MathUtils::avg($blue), MathUtils::avg($alpha)];
@@ -112,7 +112,7 @@ abstract class ImageVo
             return false;
         }
         $right = [$x + 1, $y];
-        $down = [$x, $y + 1];
+        $down  = [$x, $y + 1];
         if (
             $isOpacity && !$this->isOpacity(...$right)
             || !$isOpacity && $this->isOpacity(...$right)
@@ -157,7 +157,7 @@ abstract class ImageVo
      */
     public function preparePickMaps()
     {
-        $width = $this->image->getWidth();
+        $width  = $this->image->getWidth();
         $height = $this->image->getHeight();
         for ($x = 0; $x < $width; $x++) {
             for ($y = 0; $y < $height; $y++) {
@@ -166,13 +166,14 @@ abstract class ImageVo
         }
     }
 
-    public function setFinishCallback($finishCallback){
+    public function setFinishCallback($finishCallback)
+    {
         $this->finishCallback = $finishCallback;
     }
 
     public function __destruct()
     {
-        if(!empty($this->finishCallback) && $this->finishCallback instanceof \Closure){
+        if (!empty($this->finishCallback) && $this->finishCallback instanceof \Closure) {
             ($this->finishCallback)($this);
         }
     }

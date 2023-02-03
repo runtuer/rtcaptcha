@@ -15,23 +15,21 @@ class BlockPuzzleCaptchaService extends Service
     public function get(): array
     {
         $cacheEntity = $this->factory->getCacheInstance();
-        $blockImage = $this->factory->makeBlockImage();
+        $blockImage  = $this->factory->makeBlockImage();
         $blockImage->run();
         $data = [
             'originalImageBase64' => $blockImage->response(),
-            'jigsawImageBase64' => $blockImage->response('template'),
-            'secretKey' => RandomUtils::getRandomCode(16, 3),
-            'token' => RandomUtils::getUUID(),
+            'jigsawImageBase64'   => $blockImage->response('template'),
+            'secretKey'           => RandomUtils::getRandomCode(16, 3),
+            'token'               => RandomUtils::getUUID(),
         ];
         //缓存
         $cacheEntity->set($data['token'], [
             'secretKey' => $data['secretKey'],
-            'point' => $blockImage->getPoint()
+            'point'     => $blockImage->getPoint()
         ], 7200);
         return $data;
     }
-
-
 
 
     /**
@@ -40,7 +38,7 @@ class BlockPuzzleCaptchaService extends Service
      * @param string $pointJson
      * @param null $callback
      */
-    public function validate( $token,  $pointJson, $callback = null)
+    public function validate($token, $pointJson, $callback = null)
     {
         //获取并设置 $this->originData
         $this->setOriginData($token);
@@ -54,7 +52,7 @@ class BlockPuzzleCaptchaService extends Service
 
         //检查
         $blockData->check($this->originData['point'], $targetPoint);
-        if($callback instanceof \Closure){
+        if ($callback instanceof \Closure) {
             $callback();
         }
     }

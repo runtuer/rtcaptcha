@@ -3,23 +3,23 @@ declare(strict_types=1);
 
 namespace Runtuer\Utils;
 
-
 class CacheUtils
 {
     /**
      * 配置参数
      * @var array
      */
-    protected $options = [
-        'expire'        => 300,
-        'cache_subdir'  => true,
-        'prefix'        => '',
-        'path'          => '',
-        'hash_type'     => 'md5',
-        'data_compress' => false,
-        'tag_prefix'    => 'tag:',
-        'serialize'     => [],
-    ];
+    protected $options
+        = [
+            'expire'        => 300,
+            'cache_subdir'  => true,
+            'prefix'        => '',
+            'path'          => '',
+            'hash_type'     => 'md5',
+            'data_compress' => false,
+            'tag_prefix'    => 'tag:',
+            'serialize'     => [],
+        ];
 
     /**
      * 缓存读取次数
@@ -45,8 +45,8 @@ class CacheUtils
         }
 
         if (empty($this->options['path'])) {
-            $root = isset($_SERVER['DOCUMENT_ROOT']) && !empty($_SERVER['DOCUMENT_ROOT']) ?$_SERVER['DOCUMENT_ROOT'] : getcwd();
-            $this->options['path'] = $root. '/runtime/cache';
+            $root                  = isset($_SERVER['DOCUMENT_ROOT']) && !empty($_SERVER['DOCUMENT_ROOT']) ? $_SERVER['DOCUMENT_ROOT'] : getcwd();
+            $this->options['path'] = $root . '/runtime/cache';
         }
 
         if (substr($this->options['path'], -1) != DIRECTORY_SEPARATOR) {
@@ -92,7 +92,7 @@ class CacheUtils
         $content = @file_get_contents($filename);
 
         if (false !== $content) {
-            $expire = (int) substr($content, 8, 12);
+            $expire = (int)substr($content, 8, 12);
             if (0 != $expire && time() - $expire > filemtime($filename)) {
                 //缓存过期删除缓存文件
                 $this->unlink($filename);
@@ -119,8 +119,8 @@ class CacheUtils
     /**
      * 读取缓存
      * @access public
-     * @param string $name    缓存变量名
-     * @param mixed  $default 默认值
+     * @param string $name 缓存变量名
+     * @param mixed $default 默认值
      * @return mixed
      */
     public function get($name, $default = null)
@@ -135,8 +135,8 @@ class CacheUtils
     /**
      * 写入缓存
      * @access public
-     * @param string        $name   缓存变量名
-     * @param mixed         $value  存储数据
+     * @param string $name 缓存变量名
+     * @param mixed $value 存储数据
      * @param int $expire 有效时间 0为永久
      * @return bool
      */
@@ -182,7 +182,7 @@ class CacheUtils
      * 自增缓存（针对数值缓存）
      * @access public
      * @param string $name 缓存变量名
-     * @param int    $step 步长
+     * @param int $step 步长
      * @return false|int
      */
     public function inc(string $name, int $step = 1)
@@ -202,7 +202,7 @@ class CacheUtils
      * 自减缓存（针对数值缓存）
      * @access public
      * @param string $name 缓存变量名
-     * @param int    $step 步长
+     * @param int $step 步长
      * @return false|int
      */
     public function dec(string $name, int $step = 1)
@@ -292,6 +292,7 @@ class CacheUtils
 
         return true;
     }
+
     /**
      * 序列化数据
      * @access protected
@@ -301,7 +302,7 @@ class CacheUtils
     protected function serialize($data): string
     {
         if (is_numeric($data)) {
-            return (string) $data;
+            return (string)$data;
         }
 
         $serialize = $this->options['serialize'][0] ?? "serialize";

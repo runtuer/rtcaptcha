@@ -3,10 +3,9 @@ declare(strict_types=1);
 
 namespace Runtuer\Domain\Logic;
 
-
+use Intervention\Image\ImageManagerStatic;
 use Runtuer\Domain\Vo\BackgroundVo;
 use Runtuer\Utils\RandomUtils;
-use Intervention\Image\ImageManagerStatic;
 
 class BaseData
 {
@@ -65,7 +64,7 @@ class BaseData
      */
     public function getBackgroundVo($backgrounds = null): BackgroundVo
     {
-        $dir = dirname(__DIR__, 3). $this->defaultBackgroundPath;
+        $dir = dirname(__DIR__, 3) . $this->defaultBackgroundPath;
         $backgrounds = $this->getDefaultImage($dir, $backgrounds);
         $src = $this->getRandImage($backgrounds);
         return new BackgroundVo($src);

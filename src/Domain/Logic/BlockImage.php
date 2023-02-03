@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Runtuer\Domain\Logic;
 
-
 use Runtuer\Domain\Vo\BackgroundVo;
 use Runtuer\Domain\Vo\ImageVo;
 use Runtuer\Domain\Vo\PointVo;

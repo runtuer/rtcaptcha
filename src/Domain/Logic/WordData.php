@@ -16,7 +16,6 @@ class WordData extends BaseData
 {
     protected $defaultBackgroundPath = '/resources/defaultImages/pic-click/';
 
-
     /**
      * @param $width
      * @param $height

@@ -3,15 +3,15 @@ declare(strict_types=1);
 
 namespace Runtuer\Domain;
 
+use Intervention\Image\ImageManagerStatic;
 use Runtuer\Domain\Logic\BaseData;
 use Runtuer\Domain\Logic\BaseImage;
+use Runtuer\Domain\Logic\BlockData;
 use Runtuer\Domain\Logic\BlockImage;
 use Runtuer\Domain\Logic\Cache;
-use Runtuer\Domain\Logic\WordImage;
-use Runtuer\Domain\Logic\BlockData;
 use Runtuer\Domain\Logic\WordData;
+use Runtuer\Domain\Logic\WordImage;
 use Runtuer\Domain\Vo\ImageVo;
-use Intervention\Image\ImageManagerStatic;
 
 class Factory
 {
@@ -29,7 +29,7 @@ class Factory
      */
     public function makeBlockImage(): BlockImage
     {
-        $data = new BlockData();
+        $data  = new BlockData();
         $image = new BlockImage();
         $this->setCommon($image, $data);
         $this->setBlock($image, $data);
@@ -41,7 +41,7 @@ class Factory
      */
     public function makeWordImage(): WordImage
     {
-        $data = new WordData();
+        $data  = new WordData();
         $image = new WordImage();
         $this->setCommon($image, $data);
         $this->setWord($image, $data);
@@ -98,7 +98,7 @@ class Factory
             $cache = $this->getCacheInstance();
             foreach ($pixelMaps as $vo) {
                 /**@var ImageVo $vo * */
-                $key = 'image_pixel_map_' . $vo->src;
+                $key    = 'image_pixel_map_' . $vo->src;
                 $result = $cache->get($key);
                 if (!empty($result) && is_array($result)) {
                     $vo->setPickMaps($result);

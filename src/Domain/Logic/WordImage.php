@@ -3,8 +3,6 @@ declare(strict_types=1);
 
 namespace Runtuer\Domain\Logic;
 
-use Runtuer\Domain\Vo\PointVo;
-use Intervention\Image\ImageManagerStatic as ImageManager;
 use Intervention\Image\AbstractFont as Font;
 use Runtuer\Utils\RandomUtils;
 
@@ -37,7 +35,6 @@ class WordImage extends BaseImage
     }
 
 
-
     public function run()
     {
         $this->inputWords();
@@ -47,7 +44,8 @@ class WordImage extends BaseImage
     /**
      * 写入文字
      */
-    protected function inputWords(){
+    protected function inputWords()
+    {
         foreach ($this->wordList as $key => $word) {
             $point = $this->point[$key];
             $this->backgroundVo->image->text($word, $point->x, $point->y, function (Font $font) {

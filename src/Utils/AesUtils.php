@@ -18,7 +18,6 @@ class AesUtils
     public static function encrypt($str, string $secretKey)
     {
         return base64_encode(openssl_encrypt($str, 'AES-128-ECB', $secretKey, OPENSSL_RAW_DATA));
-
     }
 
     /**
@@ -29,8 +28,8 @@ class AesUtils
      */
     public static function decrypt($str, string $secretKey): string
     {
-        $ret = openssl_decrypt(base64_decode($str), 'AES-128-ECB', $secretKey,OPENSSL_RAW_DATA);
-        if($ret === false){
+        $ret = openssl_decrypt(base64_decode($str), 'AES-128-ECB', $secretKey, OPENSSL_RAW_DATA);
+        if ($ret === false) {
             throw new \RuntimeException('请检查密钥是否正确！');
         }
         return $ret;

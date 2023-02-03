@@ -11,19 +11,20 @@ class Cache
 
     protected $driver;
 
-    protected $methodMap = [
-        'get' => 'get',
-        'set' => 'set',
-        'delete' => 'delete',
-        'has' => 'has'
-    ];
+    protected $methodMap
+        = [
+            'get'    => 'get',
+            'set'    => 'set',
+            'delete' => 'delete',
+            'has'    => 'has'
+        ];
 
     public function __construct($config)
     {
         if (isset($config['method'])) {
             $this->methodMap = array_merge($this->methodMap, $config['method']);
         }
-        $this->driver = $this->getDriver($config['constructor'], $config['options']??[]);
+        $this->driver = $this->getDriver($config['constructor'], $config['options'] ?? []);
     }
 
     public function getDriver($callback, $options)
@@ -86,7 +87,7 @@ class Cache
     public function get($key, $default = null)
     {
         $method = $this->getDriverMethod('get');
-        return $this->execute($method, [$key,$default]);
+        return $this->execute($method, [$key, $default]);
     }
 
     public function set($key, $value, $ttl = null)
@@ -107,7 +108,8 @@ class Cache
         return $this->execute($method, [$key]);
     }
 
-    protected function execute(string $method, array $params){
+    protected function execute(string $method, array $params)
+    {
         return $this->driver->$method(...$params);
     }
 

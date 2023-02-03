@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Runtuer\Domain\Logic;
 
-
 use Runtuer\Domain\Vo\BackgroundVo;
 use Runtuer\Domain\Vo\OffsetVo;
 use Runtuer\Domain\Vo\TemplateVo;
@@ -59,7 +58,6 @@ class BlockData extends BaseData
     }
 
 
-
     public function getInterfereVo(BackgroundVo $backgroundVo, TemplateVo $templateVo, $templates = []): TemplateVo
     {
         //背景
@@ -72,7 +70,7 @@ class BlockData extends BaseData
 
         $interfereVo = new TemplateVo($src);
 
-        $maxOffsetX = intval($templateVo->image->getWidth()/2);
+        $maxOffsetX = intval($templateVo->image->getWidth() / 2);
         do {
             //随机获取偏移量
             $offsetX = RandomUtils::getRandomInt(0, $background->getWidth() - $templateVo->image->getWidth() - 1);
@@ -104,11 +102,10 @@ class BlockData extends BaseData
     protected function exclude($templates, $exclude): array
     {
         if (false !== ($key = array_search($exclude, $templates))) {
-            array_splice($templates,$key,1);
+            array_splice($templates, $key, 1);
         }
         return $templates;
     }
-
 
 
     /**
