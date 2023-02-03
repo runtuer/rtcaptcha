@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Domain\Vo;
+namespace Runtuer\Domain\Vo;
 
 
 class OffsetVo

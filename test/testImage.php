@@ -1,11 +1,10 @@
 <?php
 
-use Fastknife\Domain\Factory;
+use Runtuer\Domain\Factory;
 
 require 'autoload.php';
 
 $config = require '../src/config.php';
-
 
 function showBlock()
 {

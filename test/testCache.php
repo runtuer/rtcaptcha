@@ -1,5 +1,5 @@
 <?php
-use Fastknife\Domain\Logic\Cache;
+use Runtuer\Domain\Logic\Cache;
 
 include '../src/Domain/Logic/Cache.php';
 include '../src/Utils/CacheUtils.php';

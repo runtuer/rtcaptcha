@@ -1,8 +1,8 @@
 <?php
 
-namespace Fastknife\Domain\Vo;
+namespace Runtuer\Domain\Vo;
 
-use Fastknife\Utils\MathUtils;
+use Runtuer\Utils\MathUtils;
 use Intervention\Image\Image;
 use Intervention\Image\ImageManagerStatic;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Fastknife\Utils;
+namespace Runtuer\Utils;
 
 class MathUtils
 {

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Service;
+namespace Runtuer\Service;
 
-use Fastknife\Domain\Vo\PointVo;
-use Fastknife\Utils\RandomUtils;
+use Runtuer\Domain\Vo\PointVo;
+use Runtuer\Utils\RandomUtils;
 
 class BlockPuzzleCaptchaService extends Service
 {

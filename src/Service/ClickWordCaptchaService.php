@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Service;
+namespace Runtuer\Service;
 
-use Fastknife\Exception\ParamException;
-use Fastknife\Utils\AesUtils;
-use Fastknife\Utils\RandomUtils;
+use Runtuer\Exception\ParamException;
+use Runtuer\Utils\AesUtils;
+use Runtuer\Utils\RandomUtils;
 
 class ClickWordCaptchaService extends Service
 {

@@ -29,7 +29,7 @@ return [
     ],
     'cache' => [
         //若您使用了框架，并且想使用类似于redis这样的缓存驱动，则应换成框架的中的缓存驱动
-        'constructor' => \Fastknife\Utils\CacheUtils::class,
+        'constructor' => \Runtuer\Utils\CacheUtils::class,
         'method' => [
             //遵守PSR-16规范不需要设置此项（tp6, laravel,hyperf）。如tp5就不支持（tp5缓存方法是rm,所以要配置为"delete" => "rm"）
             /**
@@ -40,7 +40,7 @@ return [
              */
         ],
         'options' => [
-            //如果您依然使用\Fastknife\Utils\CacheUtils做为您的缓存驱动，那么您可以自定义缓存配置。
+            //如果您依然使用\Runtuer\Utils\CacheUtils做为您的缓存驱动，那么您可以自定义缓存配置。
             'expire'        => 300,//缓存有效期 （默认为0 表示永久缓存）
             'prefix'        => '', //缓存前缀
             'path'          => '', //缓存目录

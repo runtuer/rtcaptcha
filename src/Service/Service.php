@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Service;
+namespace Runtuer\Service;
 
 
-use Fastknife\Domain\Factory;
-use Fastknife\Exception\ParamException;
-use Fastknife\Utils\AesUtils;
+use Runtuer\Domain\Factory;
+use Runtuer\Exception\ParamException;
+use Runtuer\Utils\AesUtils;
 
 abstract class Service
 {

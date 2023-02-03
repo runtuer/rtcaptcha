@@ -1,17 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Domain\Logic;
+namespace Runtuer\Domain\Logic;
 
-use Fastknife\Domain\Vo\PointVo;
+use Runtuer\Domain\Vo\PointVo;
 use Intervention\Image\ImageManagerStatic as ImageManager;
 use Intervention\Image\AbstractFont as Font;
-use Fastknife\Utils\RandomUtils;
+use Runtuer\Utils\RandomUtils;
 
 /**
  * 文字码图片处理
  * Class WordCaptchaEntity
- * @package Fastknife\Domain\Entity
+ * @package Runtuer\Domain\Entity
  */
 class WordImage extends BaseImage
 {

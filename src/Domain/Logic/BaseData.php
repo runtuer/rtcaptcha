@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Domain\Logic;
+namespace Runtuer\Domain\Logic;
 
 
-use Fastknife\Domain\Vo\BackgroundVo;
-use Fastknife\Utils\RandomUtils;
+use Runtuer\Domain\Vo\BackgroundVo;
+use Runtuer\Utils\RandomUtils;
 use Intervention\Image\ImageManagerStatic;
 
 class BaseData

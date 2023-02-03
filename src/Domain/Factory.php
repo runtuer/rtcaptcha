@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Domain;
+namespace Runtuer\Domain;
 
-use Fastknife\Domain\Logic\BaseData;
-use Fastknife\Domain\Logic\BaseImage;
-use Fastknife\Domain\Logic\BlockImage;
-use Fastknife\Domain\Logic\Cache;
-use Fastknife\Domain\Logic\WordImage;
-use Fastknife\Domain\Logic\BlockData;
-use Fastknife\Domain\Logic\WordData;
-use Fastknife\Domain\Vo\ImageVo;
+use Runtuer\Domain\Logic\BaseData;
+use Runtuer\Domain\Logic\BaseImage;
+use Runtuer\Domain\Logic\BlockImage;
+use Runtuer\Domain\Logic\Cache;
+use Runtuer\Domain\Logic\WordImage;
+use Runtuer\Domain\Logic\BlockData;
+use Runtuer\Domain\Logic\WordData;
+use Runtuer\Domain\Vo\ImageVo;
 use Intervention\Image\ImageManagerStatic;
 
 class Factory

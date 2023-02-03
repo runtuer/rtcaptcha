@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Domain\Logic;
+namespace Runtuer\Domain\Logic;
 
-use Fastknife\Utils\CacheUtils;
+use Runtuer\Utils\CacheUtils;
 
 class Cache
 {

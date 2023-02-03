@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Utils;
+namespace Runtuer\Utils;
 
 
 class RandomUtils

@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Domain\Logic;
+namespace Runtuer\Domain\Logic;
 
 
-use Fastknife\Domain\Vo\BackgroundVo;
+use Runtuer\Domain\Vo\BackgroundVo;
 use Intervention\Image\AbstractFont as Font;
 use Intervention\Image\Image;
 

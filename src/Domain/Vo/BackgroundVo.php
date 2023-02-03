@@ -1,6 +1,6 @@
 <?php
 
-namespace Fastknife\Domain\Vo;
+namespace Runtuer\Domain\Vo;
 
 class BackgroundVo extends ImageVo
 {

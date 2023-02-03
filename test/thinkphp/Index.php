@@ -2,10 +2,9 @@
 
 namespace app\controller;
 
-use Fastknife\Exception\ParamException;
-use Fastknife\Service\ClickWordCaptchaService;
-use Fastknife\Service\BlockPuzzleCaptchaService;
-use Fastknife\Service\Service;
+use Runtuer\Exception\ParamException;
+use Runtuer\Service\BlockPuzzleCaptchaService;
+use Runtuer\Service\ClickWordCaptchaService;
 use think\exception\HttpResponseException;
 use think\facade\Validate;
 use think\Response;

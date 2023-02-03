@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use Fastknife\Exception\ParamException;
-use Fastknife\Service\BlockPuzzleCaptchaService;
-use Fastknife\Service\ClickWordCaptchaService;
 use Illuminate\Support\Facades\Request;
+use Runtuer\Exception\ParamException;
+use Runtuer\Service\BlockPuzzleCaptchaService;
+use Runtuer\Service\ClickWordCaptchaService;
 
 class IndexController
 {
@@ -14,7 +14,7 @@ class IndexController
     {
         try {
             $service = $this->getCaptchaService();
-            $data    = $service->get();
+            $data = $service->get();
         } catch (\Exception $e) {
             return $this->error($e->getMessage());
         }
@@ -28,7 +28,7 @@ class IndexController
     public function check()
     {
         try {
-            $data    = $this->validate();
+            $data = $this->validate();
             $service = $this->getCaptchaService();
             $service->check($data['token'], $data['pointJson']);
         } catch (\Exception $e) {
@@ -44,7 +44,7 @@ class IndexController
     public function verification()
     {
         try {
-            $data    = $this->validate();
+            $data = $this->validate();
             $service = $this->getCaptchaService();
             $service->verification($data['token'], $data['pointJson']);
         } catch (\Exception $e) {
@@ -56,7 +56,7 @@ class IndexController
     protected function getCaptchaService()
     {
         $captchaType = request()->post('captchaType', null);
-        $config      = config('captcha');
+        $config = config('captcha');
         switch ($captchaType) {
             case "clickWord":
                 $service = new ClickWordCaptchaService($config);
@@ -73,7 +73,7 @@ class IndexController
     protected function validate()
     {
         return Request::instance()->validate([
-            'token'     => 'bail|required',
+            'token' => 'bail|required',
             'pointJson' => 'required',
         ]);
 
@@ -82,10 +82,10 @@ class IndexController
     protected function success($data)
     {
         return [
-            'error'   => false,
+            'error' => false,
             'repCode' => 0,
             'repData' => $data,
-            'repMsg'  => null,
+            'repMsg' => null,
             'success' => true,
         ];
     }
@@ -94,10 +94,10 @@ class IndexController
     protected function error($msg)
     {
         return [
-            'error'   => true,
+            'error' => true,
             'repCode' => '1',
             'repData' => null,
-            'repMsg'  => $msg,
+            'repMsg' => $msg,
             'success' => false,
         ];
     }

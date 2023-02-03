@@ -1,5 +1,5 @@
 {
-    "name": "fastknife/ajcaptcha",
+    "name": "runtuer/rtcaptcha",
     "description": "This is a behavior verification code PHP back-end implementation package",
     "type": "library",
     "authors": [
@@ -20,7 +20,7 @@
     "license": "GPL-3.0-only",
     "autoload": {
         "psr-4": {
-            "Fastknife\\": "src"
+            "Runtuer\\": "src"
         }
     }
 }

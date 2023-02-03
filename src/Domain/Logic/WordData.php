@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Domain\Logic;
+namespace Runtuer\Domain\Logic;
 
-use Fastknife\Domain\Vo\PointVo;
-use Fastknife\Exception\WordException;
-use Fastknife\Utils\RandomUtils;
+use Runtuer\Domain\Vo\PointVo;
+use Runtuer\Exception\WordException;
+use Runtuer\Utils\RandomUtils;
 
 /**
  * 文字码数据处理
  * Class WordDataEntity
- * @package Fastknife\Domain\Entity
+ * @package Runtuer\Domain\Entity
  */
 class WordData extends BaseData
 {

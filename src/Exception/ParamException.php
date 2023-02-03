@@ -1,10 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Exception;
+namespace Runtuer\Exception;
 
-
-use \RuntimeException;
+use RuntimeException;
 
 class ParamException extends RuntimeException
 {

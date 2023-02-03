@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Domain\Logic;
+namespace Runtuer\Domain\Logic;
 
 
-use Fastknife\Domain\Vo\BackgroundVo;
-use Fastknife\Domain\Vo\ImageVo;
-use Fastknife\Domain\Vo\PointVo;
-use Fastknife\Domain\Vo\TemplateVo;
+use Runtuer\Domain\Vo\BackgroundVo;
+use Runtuer\Domain\Vo\ImageVo;
+use Runtuer\Domain\Vo\PointVo;
+use Runtuer\Domain\Vo\TemplateVo;
 
 class BlockImage extends BaseImage
 {

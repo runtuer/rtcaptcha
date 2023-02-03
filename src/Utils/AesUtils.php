@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Utils;
+namespace Runtuer\Utils;
 
 /**
  * Class AesUtils
- * @package Fastknife\Utils
+ * @package Runtuer\Utils
  */
 class AesUtils
 {

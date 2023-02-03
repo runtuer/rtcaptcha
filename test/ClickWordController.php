@@ -1,8 +1,7 @@
 <?php
 declare(strict_types=1);
 
-use Fastknife\Utils\RandomUtils;
-use Fastknife\Service\ClickWordCaptchaService;
+use Runtuer\Service\ClickWordCaptchaService;
 
 class ClickWordController
 {
@@ -43,7 +42,7 @@ class ClickWordController
             'repCode' => $repCode,
             'repData' => null,
             'repMsg' => $msg,
-            'success' => ! $error,
+            'success' => !$error,
         ]);
     }
 
@@ -59,9 +58,9 @@ class ClickWordController
         $error = false;
         $repCode = 0;
         try {
-            if(isset($data['captchaVerification'])){
+            if (isset($data['captchaVerification'])) {
                 $service->verificationByEncryptCode($data['captchaVerification']);
-            }else if (isset($data['token']) && isset($data['pointJson'])){
+            } else if (isset($data['token']) && isset($data['pointJson'])) {
                 $service->verification($data['token'], $data['pointJson']);
             } else {
                 throw new \Exception('参数错误！');
@@ -76,7 +75,7 @@ class ClickWordController
             'repCode' => $repCode,
             'repData' => null,
             'repMsg' => $msg,
-            'success' => ! $error,
+            'success' => !$error,
         ]);
     }
 }

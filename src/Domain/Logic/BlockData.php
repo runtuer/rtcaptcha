@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Fastknife\Domain\Logic;
+namespace Runtuer\Domain\Logic;
 
 
-use Fastknife\Domain\Vo\BackgroundVo;
-use Fastknife\Domain\Vo\OffsetVo;
-use Fastknife\Domain\Vo\TemplateVo;
-use Fastknife\Exception\BlockException;
-use Fastknife\Utils\RandomUtils;
+use Runtuer\Domain\Vo\BackgroundVo;
+use Runtuer\Domain\Vo\OffsetVo;
+use Runtuer\Domain\Vo\TemplateVo;
+use Runtuer\Exception\BlockException;
+use Runtuer\Utils\RandomUtils;
 
 class BlockData extends BaseData
 {
