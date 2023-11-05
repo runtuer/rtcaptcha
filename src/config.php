@@ -2,10 +2,11 @@
 declare(strict_types=1);
 
 return [
-    'font_file' => '', //自定义字体包路径， 不填使用默认值
+    'font_file'    => '', //自定义字体包路径， 不填使用默认值
     //文字验证码
-    'click_world' => [
-        'backgrounds' => []
+    'click_world'  => [
+        'backgrounds' => [],
+        'word_num'    => 4, //写入多少字文字（2-5）
     ],
     //滑动验证码
     'block_puzzle' => [
@@ -13,7 +14,7 @@ return [
         'backgrounds' => [],
 
         /*模板图,格式同上支持string与array*/
-        'templates' => [],
+        'templates'   => [],
 
         'offset' => 10, //容错偏移量
 
@@ -22,29 +23,29 @@ return [
         'is_interfere' => true, //开启干扰图
     ],
     //水印
-    'watermark' => [
+    'watermark'    => [
         'fontsize' => 12,
-        'color' => '#000000',
-        'text' => '我的水印'
+        'color'    => '#000000',
+        'text'     => '我的水印'
     ],
-    'cache' => [
+    'cache'        => [
         //若您使用了框架，并且想使用类似于redis这样的缓存驱动，则应换成框架的中的缓存驱动
         'constructor' => \Runtuer\Utils\CacheUtils::class,
-        'method' => [
+        'method'      => [
             //遵守PSR-16规范不需要设置此项（tp6, laravel,hyperf）。如tp5就不支持（tp5缓存方法是rm,所以要配置为"delete" => "rm"）
             /**
-            'get' => 'get', //获取
-            'set' => 'set', //设置
-            'delete' => 'delete',//删除
-            'has' => 'has' //key是否存在
+             * 'get' => 'get', //获取
+             * 'set' => 'set', //设置
+             * 'delete' => 'delete',//删除
+             * 'has' => 'has' //key是否存在
              */
         ],
-        'options' => [
+        'options'     => [
             //如果您依然使用\Runtuer\Utils\CacheUtils做为您的缓存驱动，那么您可以自定义缓存配置。
-            'expire'        => 300,//缓存有效期 （默认为0 表示永久缓存）
-            'prefix'        => '', //缓存前缀
-            'path'          => '', //缓存目录
-            'serialize'     => [], //缓存序列化和反序列化方法
+            'expire'    => 300,//缓存有效期 （默认为0 表示永久缓存）
+            'prefix'    => '', //缓存前缀
+            'path'      => '', //缓存目录
+            'serialize' => [], //缓存序列化和反序列化方法
         ]
     ]
 ];
