@@ -27,7 +27,7 @@ class BlockPuzzleCaptchaService extends Service
         $cacheEntity->set($data['token'], [
             'secretKey' => $data['secretKey'],
             'point'     => $blockImage->getPoint()
-        ], 7200);
+        ], $this->factory->getConfig()['cache']['options']['expire'] ?? 300);
         return $data;
     }
 

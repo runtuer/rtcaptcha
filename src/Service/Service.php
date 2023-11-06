@@ -50,7 +50,7 @@ abstract class Service
                 'token' => $token,
                 'point' => $pointJson
             ],
-            600
+            $this->factory->getConfig()['cache']['options']['expire'] ?? 300
         );
     }
 
